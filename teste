@@ -1,0 +1,158 @@
+using System;
+using System.Collections.Generic;
+
+namespace QuizPOO
+{
+    class Program
+    {
+        class Pergunta
+        {
+            public string Enunciado { get; set; }
+            public string[] Opcoes { get; set; }
+            public char RespostaCorreta { get; set; }
+
+            public Pergunta(string enunciado, string[] opcoes, char respostaCorreta)
+            {
+                Enunciado = enunciado;
+                Opcoes = opcoes;
+                RespostaCorreta = respostaCorreta;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            List<Pergunta> perguntas = new List<Pergunta>
+            {
+                // Tipos de dados
+                new Pergunta("1. Qual é o tipo de dado adequado para armazenar um número inteiro em C#?",
+                    new string[] {"A) string", "B) int", "C) bool", "D) double"}, 'B'),
+                new Pergunta("2. Qual tipo de dado é usado para valores com ponto decimal de precisão dupla em C#?",
+                    new string[] {"A) float", "B) decimal", "C) double", "D) int"}, 'C'),
+                new Pergunta("3. Em C#, qual tipo de dado é usado para armazenar verdadeiro ou falso?",
+                    new string[] {"A) bool", "B) string", "C) char", "D) object"}, 'A'),
+                new Pergunta("4. Qual tipo de dado deve ser usado para armazenar uma sequência de caracteres?",
+                    new string[] {"A) char", "B) string", "C) int", "D) bool"}, 'B'),
+                new Pergunta("5. Qual dos seguintes tipos é considerado um tipo de referência em C#?",
+                    new string[] {"A) int", "B) bool", "C) string", "D) double"}, 'C'),
+
+                // Classes e Objetos
+                new Pergunta("6. Uma classe em programação orientada a objetos é:",
+                    new string[] {"A) Um tipo de dado primitivo", "B) Um molde para criar objetos", "C) Uma função", "D) Uma variável"}, 'B'),
+                new Pergunta("7. Um objeto é:",
+                    new string[] {"A) Um método de uma classe", "B) Uma instância de uma classe", "C) Um tipo de dado primitivo", "D) Uma propriedade de uma classe"}, 'B'),
+                new Pergunta("8. Qual palavra-chave em C# é usada para criar uma instância de uma classe?",
+                    new string[] {"A) class", "B) new", "C) object", "D) this"}, 'B'),
+                new Pergunta("9. Qual a sintaxe correta para criar um objeto pessoa da classe Pessoa?",
+                    new string[] {"A) Pessoa pessoa = Pessoa();", "B) Pessoa pessoa = new Pessoa();", "C) Pessoa pessoa();", "D) new Pessoa = pessoa();"}, 'B'),
+                new Pergunta("10. Qual o propósito de encapsular os atributos de uma classe usando propriedades?",
+                    new string[] {"A) Melhorar performance", "B) Proteger o acesso aos dados", "C) Reduzir a quantidade de código", "D) Transformar o atributo em método"}, 'B'),
+
+                // Propriedades e Métodos
+                new Pergunta("11. Qual palavra-chave define uma propriedade em C#?",
+                    new string[] {"A) function", "B) property", "C) get e set", "D) method"}, 'C'),
+                new Pergunta("12. Em C#, como você define um método chamado Calcular que retorna um inteiro?",
+                    new string[] {"A) int Calcular() { }", "B) void Calcular() { return int; }", "C) Calcular() int { }", "D) function int Calcular() { }"}, 'A'),
+                new Pergunta("13. Qual a diferença entre um método e uma propriedade?",
+                    new string[] {"A) Método armazena dados, propriedade executa código", "B) Método executa código, propriedade armazena/retorna dados", "C) Não há diferença", "D) Método é sempre público, propriedade sempre privada"}, 'B'),
+                new Pergunta("14. Em C#, qual palavra-chave indica que um método não retorna valor?",
+                    new string[] {"A) void", "B) int", "C) return", "D) null"}, 'A'),
+                new Pergunta("15. Qual das alternativas representa corretamente uma propriedade automática em C#?",
+                    new string[] {"A) public int Id { get; set; }", "B) int Id() { return value; }", "C) public int Id() { get; set; }", "D) private int Id = get;"}, 'A'),
+
+                // Herança
+                new Pergunta("16. Qual palavra-chave em C# indica que uma classe herda de outra?",
+                    new string[] {"A) inherits", "B) extends", "C) :", "D) super"}, 'C'),
+                new Pergunta("17. Considerando class Carro : Veiculo, qual afirmação é verdadeira?",
+                    new string[] {"A) Carro é a classe base", "B) Veiculo é a classe derivada", "C) Carro é derivada de Veiculo", "D) Veiculo não é utilizada"}, 'C'),
+                new Pergunta("18. Herança permite:",
+                    new string[] {"A) Criar métodos privados", "B) Reutilizar código de uma classe base", "C) Evitar criação de objetos", "D) Alterar tipos de dados"}, 'B'),
+                new Pergunta("19. Qual é uma vantagem da herança?",
+                    new string[] {"A) Reduz repetição de código", "B) Melhora performance", "C) Cria múltiplos objetos", "D) Permite variáveis públicas"}, 'A'),
+                new Pergunta("20. Se uma classe derivada sobrescreve um método da classe base, isso é chamado de:",
+                    new string[] {"A) Polimorfismo", "B) Encapsulamento", "C) Sobrecarga", "D) Herança"}, 'A'),
+
+                // Polimorfismo
+                new Pergunta("21. Polimorfismo permite:",
+                    new string[] {"A) Criar apenas um tipo de objeto", "B) Um mesmo método se comportar de maneiras diferentes", "C) Aumentar o número de variáveis", "D) Alterar tipos de dados"}, 'B'),
+                new Pergunta("22. Qual das opções é um exemplo de polimorfismo em C#?",
+                    new string[] {"A) Dois métodos com nomes diferentes", "B) Sobrescrever um método da classe base", "C) Usar propriedades privadas", "D) Criar um objeto"}, 'B'),
+                new Pergunta("23. Polimorfismo pode ser aplicado através de:",
+                    new string[] {"A) Sobrescrita (override)", "B) Sobrecarga (overload)", "C) Encapsulamento", "D) Herança"}, 'A'),
+                new Pergunta("24. Qual palavra-chave é usada para sobrescrever um método virtual da classe base?",
+                    new string[] {"A) virtual", "B) override", "C) new", "D) abstract"}, 'B'),
+                new Pergunta("25. Um método declarado como virtual em uma classe base permite:",
+                    new string[] {"A) Ser acessado apenas na própria classe", "B) Ser sobrescrito em classes derivadas", "C) Ter múltiplas versões na mesma classe", "D) Ser privado"}, 'B'),
+
+                // Sobrecarga e Sobrescrita
+                new Pergunta("26. Sobrecarga de métodos (overload) significa:",
+                    new string[] {"A) Dois métodos com o mesmo nome e mesmos parâmetros", "B) Dois métodos com nomes diferentes", "C) Dois métodos com o mesmo nome e parâmetros diferentes", "D) Um método privado e um público"}, 'C'),
+                new Pergunta("27. Sobrescrita de métodos (override) significa:",
+                    new string[] {"A) Criar dois métodos na mesma classe", "B) Alterar o comportamento de um método da classe base", "C) Alterar o nome do método", "D) Criar um método estático"}, 'B'),
+                new Pergunta("28. Qual palavra-chave indica que um método pode ser sobrescrito em classes derivadas?",
+                    new string[] {"A) abstract", "B) virtual", "C) override", "D) static"}, 'B'),
+                new Pergunta("29. Qual das opções é sobrecarga válida em C#?",
+                    new string[] {"A) void Somar(int a, int b) e int Somar(int a, int b)", "B) void Somar(int a, int b) e void Somar(double a, double b)", "C) void Somar(int a) e void Somar(int a)", "D) void Somar() e void Somar()"}, 'B'),
+                new Pergunta("30. Um método ToString() sobrescrito em uma classe é exemplo de:",
+                    new string[] {"A) Sobrecarga", "B) Sobrescrita", "C) Herança", "D) Encapsulamento"}, 'B'),
+
+                // Objetos e Instâncias
+                new Pergunta("31. Qual é a palavra-chave usada para acessar um atributo de um objeto?",
+                    new string[] {"A) :", "B) .", "C) ->", "D) ::"}, 'B'),
+                new Pergunta("32. Se Pessoa p = new Pessoa();, qual é o tipo de p?",
+                    new string[] {"A) Pessoa", "B) Objeto", "C) Classe", "D) String"}, 'A'),
+                new Pergunta("33. Qual a diferença entre new e uma variável comum?",
+                    new string[] {"A) new instancia um objeto", "B) new cria um método", "C) new apaga a memória", "D) Não há diferença"}, 'A'),
+                new Pergunta("34. Um objeto em memória é criado:",
+                    new string[] {"A) Compile-time", "B) Runtime", "C) Nunca", "D) No disco"}, 'B'),
+                new Pergunta("35. Para chamar um método Falar de um objeto pessoa, usamos:",
+                    new string[] {"A) pessoa-Falar()", "B) pessoa.Falar()", "C) pessoa->Falar()", "D) Falar(pessoa)"}, 'B'),
+
+                // Misturando Conceitos
+                new Pergunta("36. Qual recurso permite que métodos com o mesmo nome se comportem de formas diferentes?",
+                    new string[] {"A) Sobrecarga e sobrescrita", "B) Herança", "C) Propriedades", "D) Tipos de dados"}, 'A'),
+                new Pergunta("37. Qual é a relação entre uma classe base e uma classe derivada?",
+                    new string[] {"A) Composição", "B) Herança", "C) Polimorfismo", "D) Sobrescrita"}, 'B'),
+                new Pergunta("38. Qual conceito protege os atributos de acesso externo direto?",
+                    new string[] {"A) Polimorfismo", "B) Encapsulamento", "C) Herança", "D) Sobrecarga"}, 'B'),
+                new Pergunta("39. Quando você cria múltiplos métodos Calcular com assinaturas diferentes, isso é:",
+                    new string[] {"A) Sobrescrita", "B) Sobrecarga", "C) Herança", "D) Polimorfismo"}, 'B'),
+                new Pergunta("40. Em C#, um método virtual em uma classe base e sobrescrito em uma derivada é exemplo de:",
+                    new string[] {"A) Polimorfismo", "B) Encapsulamento", "C) Sobrecarga", "D) Classe abstrata"}, 'A'),
+            };
+
+            int score = 0;
+
+            foreach (var p in perguntas)
+            {
+                Console.WriteLine("\n" + p.Enunciado);
+                foreach (var opcao in p.Opcoes)
+                    Console.WriteLine(opcao);
+
+                Console.Write("Digite a letra da sua resposta: ");
+                char resposta;
+                while (!char.TryParse(Console.ReadLine().ToUpper(), out resposta) || 
+                       resposta < 'A' || resposta > 'D')
+                {
+                    Console.Write("Resposta inválida! Digite A, B, C ou D: ");
+                }
+
+                if (resposta == p.RespostaCorreta)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Correto!");
+                    score++;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Errado! A resposta correta é {p.RespostaCorreta}.");
+                }
+
+                Console.ResetColor();
+            }
+
+            Console.WriteLine($"\nVocê acertou {score} de {perguntas.Count} perguntas.");
+            Console.WriteLine("Fim do Quiz!");
+        }
+    }
+}
